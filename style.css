@@ -4,7 +4,8 @@
 }
 .card{
     background-color: white;
-    margin: 10px;
+    margin: 0 20%;
+    padding-bottom: 20px;
 }
 .card-body{
     border: solid;
@@ -14,15 +15,43 @@
 
 }
 #generate{
-    margin: 5px 20%;
+    margin: 5px 0px;
     border-radius: 10px;
+    width: 100px;
+    background-color: red;
+    color: white;
 }
 .card-header{
-    margin: 0px 20% 5px 30%;
+    display: flex;
+    justify-content: center;
 }
-h1{
-    margin: 0px 0% 5px 27%;
-}
+
 #password{
-    align-content: center;
+    flex-grow: 1;
+}
+#copyClipboardBtn{
+    margin: 5px 0px;
+    border-radius: 10px;
+    background-color:lightgray;
+    color: white;
+    width: 100px;
+    background-color: lightgrey;
+    color: white;
+    
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card-body{
+    display: flex;
+    justify-content: center;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: lightgrey;
 }
