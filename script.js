@@ -14,10 +14,10 @@ console.log(lowerCase);
 console.log(upperCase);
 
 // variables arrays to be used for random selection when creating password.
-var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCaseArray = ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'L', 'K', 'J', 'H', 'G', 'F', 'D', 'S', 'A', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
-var numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var specialCharacterArray = ['?', '!', ',', '.', '<', '>', ';', ':', '/', '#', '@', '-', '_'];
+// var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// var upperCaseArray = ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'L', 'K', 'J', 'H', 'G', 'F', 'D', 'S', 'A', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
+// var numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// var specialCharacterArray = ['?', '!', ',', '.', '<', '>', ';', ':', '/', '#', '@', '-', '_'];
 
 
 if (specialCharacters === false){
@@ -38,10 +38,12 @@ if (specialCharacters === false){
 
 function generatePassword(){
   var theString = []
-  for (i = 0; i <= 'characterCount'; i++){
+  for (i = 0; i <= characterCount; i++){
     characterSet = characterSet.toString('');
     rndmIndex = Math.floor(Math.random()*characterSet.length);
-    theString.append(characterSet[rndmIndex])
+    // console.log(rndmIndex + 'first')
+    theString.push(characterSet[rndmIndex])
+    // console.log(characterSet + 'second') 
   }
   // var randomNumber = Math.random().toString().split('')
 
@@ -51,28 +53,28 @@ console.log(generatePassword())
 
 
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-generateBtn.style.backgroundColor = 'red';
-generateBtn.style.color = 'white';
+// // Assignment Code
+// var generateBtn = document.querySelector("#generate");
+// generateBtn.style.backgroundColor = 'red';
+// generateBtn.style.color = 'white';
 
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
-}
+//   copyBtn.removeAttribute("disabled");
+//   copyBtn.focus();
+// }
 
-function copyToClipboard() {
-  // BONUS 
-}
+// function copyToClipboard() {
+//   // BONUS 
+// }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
-// BONUS EVENT LISTENER
+// // BONUS EVENT LISTENER
