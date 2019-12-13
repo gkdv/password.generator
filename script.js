@@ -1,11 +1,11 @@
 
 
 // user input prompts
-var characterCount = prompt("How many characters would you like your password to be? \nMust be between 8 and 128 characters.");
-var specialCharacters = confirm('would you like to include special characters?');
-var numericCharacter = confirm('Would you like to include numeric characters?');
-var lowerCase = confirm('Would you like to include lower case letter?');
-var upperCase = confirm('would you like to include upper case letters?');
+var characterCount;
+var specialCharacters;
+var numericCharacter;
+var lowerCase;
+var upperCase;
 
 console.log(characterCount);
 console.log(specialCharacters);
@@ -41,15 +41,32 @@ function generatePassword(){
   for (i = 0; i <= characterCount; i++){
     characterSet = characterSet.toString('');
     rndmIndex = Math.floor(Math.random()*characterSet.length);
-    // console.log(rndmIndex + 'first')
     theString.push(characterSet[rndmIndex])
-    // console.log(characterSet + 'second') 
   }
-  // var randomNumber = Math.random().toString().split('')
-
-  return(theString)
+  return(theString.toString().replace(/,/g, ""));
 }
-console.log(generatePassword())
+
+
+function genPass(){
+  characterCount = prompt("How many characters would you like your password to be? \nMust be between 8 and 128 characters.");
+  specialCharacters = confirm('would you like to include special characters?');
+  numericCharacter = confirm('Would you like to include numeric characters?');
+  lowerCase = confirm('Would you like to include lower case letter?');
+  upperCase = confirm('would you like to include upper case letters?');
+  document.querySelector('#password').innerHTML = generatePassword();
+}
+
+function clipBoard(){
+  var copyText = document.getElementById("#password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
+
+
+
+
+
 
 
 
@@ -74,7 +91,5 @@ console.log(generatePassword())
 //   // BONUS 
 // }
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
 
 // // BONUS EVENT LISTENER
